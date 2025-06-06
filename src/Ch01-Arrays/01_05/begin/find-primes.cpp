@@ -2,10 +2,28 @@
 #include <vector>
 
 using namespace std;
-
+bool isPrimes(int num)
+{
+    if(num<2)return false;
+    for(int i=2;i<=sqrt(num);i++)
+    {
+        if(num%i!=0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 void findPrimes(const int arr[], size_t size, std::vector<int> &primes)
 {
     // TODO: Implement
+    for(int i=0;i<size;i++)
+    {
+        if(isPrimes(arr[i]))
+        {
+            primes.push_back(arr[i]);
+        }
+    }
 }
 
 int main()
